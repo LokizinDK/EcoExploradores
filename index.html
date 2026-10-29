@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#243e30">
+  <meta name="description" content="Uma aventura acolhedora em pixel art. Explore Campo Mourão, restaure uma horta e dê uma nova vida aos materiais. Jogue offline.">
+  <title>EcoExploradores · Um novo começo</title>
+  <link rel="icon" href="assets/props/tree.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-shell">
+  <header class="masthead">
+    <div class="branding">
+      <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 24V13h4V9h8V5h9v9h-4v8h-9v5H6z" fill="#b3cf78"/><path d="M8 25l14-14" stroke="#f8e6b3" stroke-width="3"/></svg></div>
+      <div><strong>ECO<span>EXPLORADORES</span></strong><small>UM NOVO COMEÇO <i></i> CAMPO MOURÃO</small></div>
+    </div>
+    <nav class="mast-actions" aria-label="Opções do jogo">
+      <span class="offline-pill"><b></b> OFFLINE</span>
+      <button type="button" class="topbtn" id="soundBtn" title="Ativar ou silenciar sons (V)" aria-label="Ativar ou silenciar sons" aria-pressed="true">♫ <span>Som</span></button>
+      <button type="button" class="topbtn" id="mapBtn" title="Mapa do mundo (M)">⌘ <span>Mapa</span></button>
+      <button type="button" class="topbtn" id="fullBtn" title="Tela cheia" aria-label="Tela cheia">⛶</button>
+      <button type="button" class="topbtn" id="menuBtn" title="Pausar (Esc)">☰ <span>Menu</span></button>
+    </nav>
+  </header>
+  <main id="gameFrame" class="game-frame">
+    <canvas id="game" width="960" height="540" aria-label="Mundo de EcoExploradores. Use WASD ou setas para caminhar e E para interagir.">Seu navegador precisa oferecer suporte a Canvas para jogar.</canvas>
+    <div class="game-vignette" aria-hidden="true"></div>
+    <div class="hud-top">
+      <div class="location-chip"><span class="location-icon" id="regionIcon" aria-hidden="true">⌂</span><span><small>EXPLORANDO</small><strong id="regionName">PRAÇA CENTRAL</strong></span></div>
+      <div class="mission-chip"><div class="mission-head"><span class="eyebrow">NOSSO PRÓXIMO PASSO</span><b id="stepText">1 / 4</b></div><strong id="missionText">Recolha e separe materiais</strong><div class="progress"><div id="progressFill"></div></div></div>
+      <div class="points-chip"><span class="star" aria-hidden="true">✦</span><div><small>ECO PONTOS</small><strong id="points">0000</strong></div></div>
+    </div>
+    <div class="hud-bottom">
+      <div class="inventory-panel"><span class="bag-icon" aria-hidden="true">▣</span><div class="inventory-main"><div class="inventory-head"><span>MOCHILA</span><small>Q / 1–8 PARA SELECIONAR</small></div><div id="inventory" class="inventory-slots" role="group" aria-label="Materiais na mochila"></div></div></div>
+      <div class="counter-panel"><span class="mini-leaf" aria-hidden="true">♻</span><div><small>MATERIAIS RECICLADOS</small><strong><span id="sorted">0</span><span class="divider-slash"> / </span>12</strong></div></div>
+    </div>
+    <div id="interactHint" class="interact-hint hidden"><span class="prompt-key">E</span><span id="hintText">Interagir</span></div>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"><span class="toast-symbol" id="toastSymbol">✦</span><span id="toastText"></span></div>
+    <div id="zoneSplash" class="zone-splash hidden"><small>UM NOVO CANTINHO PARA CUIDAR</small><strong id="zoneSplashName">PARQUE ECOLÓGICO</strong><div></div></div>
+    <div class="touch-utility"><button type="button" id="touchMenu" aria-label="Pausar e abrir menu">☰</button><button type="button" id="touchMap" aria-label="Abrir mapa">⌘</button></div>
+    <div id="touchControls" class="touch-controls" aria-label="Controles de toque">
+      <div class="dpad"><span></span><button type="button" data-dir="up" aria-label="Mover para cima">▲</button><span></span><button type="button" data-dir="left" aria-label="Mover para esquerda">◀</button><span></span><button type="button" data-dir="right" aria-label="Mover para direita">▶</button><span></span><button type="button" data-dir="down" aria-label="Mover para baixo">▼</button><span></span></div>
+      <div class="touch-buttons"><button type="button" id="touchSprint" class="touch-small" aria-label="Correr">Correr</button><button type="button" id="touchSelect" class="touch-small" aria-label="Selecionar próximo material">Trocar</button><button type="button" id="touchAction" class="touch-action" aria-label="Interagir">E<span>AGIR</span></button></div>
+    </div>
+    <div id="overlay" class="overlay open"><div class="overlay-dialog" id="dialog" role="dialog" aria-modal="true" aria-label="EcoExploradores" tabindex="-1"><div class="dialog-body"><p class="dialog-eyebrow">PREPARANDO O VALE</p><h1 class="dialog-title">A aventura está chegando…</h1><p class="dialog-sub">Carregando as paisagens e seus pequenos detalhes.</p></div></div></div>
+  </main>
+  <footer class="controls-footer"><div><kbd>WASD</kbd><span>Caminhar</span><kbd>SHIFT</kbd><span>Correr</span><kbd>E</kbd><span>Interagir</span><kbd>Q</kbd><span>Mochila</span><kbd>M</kbd><span>Mapa</span><kbd>ESC</kbd><span>Pausa</span></div><span class="footer-detail">PEQUENAS ATITUDES. NOVOS COMEÇOS. <b>✦</b></span></footer>
+  <p class="orientation-tip">Para explorar com mais conforto no celular, vire a tela na horizontal.</p>
+</div>
+<noscript>Ative o JavaScript no navegador para jogar EcoExploradores.</noscript>
+<script src="data/cronograma.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

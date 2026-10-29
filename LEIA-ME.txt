@@ -1,0 +1,39 @@
+ECOEXPLORADORES — EDIÇÃO FLORESCER
+Um novo começo • versão candidata 4.0
+
+COMO JOGAR
+Extraia a pasta inteira do ZIP. Abra index.html em um navegador moderno.
+No Windows, você também pode abrir INICIAR_ECOEXPLORADORES.bat.
+Todos os recursos são locais; o jogo não precisa de internet nem instalação.
+Se o navegador restringir arquivos locais, use o servidor opcional:
+  python3 tools/serve.py
+Abra a porta 8000 no navegador local.
+
+CONTROLES
+WASD ou setas: caminhar. Shift: correr.
+E ou espaço: interagir, recolher, separar ou plantar.
+Q ou 1–8: escolher material. Também é possível clicar nos espaços da mochila.
+M: mapa. J: diário de missões. V: som. Esc: pausa.
+No celular: botões de direção, Correr, Trocar e Agir; prefira tela horizontal.
+
+SUA MISSÃO
+Separe 12 materiais nas lixeiras corretas. Após 3 separações, a oficina abre.
+Encontre a peça perto do mercado, no Bairro Urbano, e reative a máquina.
+Na Horta Comunitária, restaure os 3 canteiros para concluir a missão.
+Há segredos no parque e mais materiais para recolher após a conclusão.
+
+SALVAMENTO
+O progresso é salvo automaticamente neste navegador e endereço.
+Use Continuar minha aventura ao voltar. Limpar os dados do navegador apaga
+os salvamentos; eles não são compartilhados entre aparelhos ou endereços.
+Nova aventura pede confirmação antes de substituir o progresso anterior.
+
+O QUE MUDOU
+100 imagens do jogo redesenhadas; nova capa e interface; 5 regiões de
+1920 x 1200; horta, corrida, minimapa, diário, mochila com 8 espaços,
+salvamento, controles de toque e caminhos/colisões revisados.
+
+ANTES DE PUBLICAR
+Confira o cronograma municipal com uma fonte oficial; foi preservado do
+projeto original e não é atualizado pela internet. Valide o jogo no navegador
+e dispositivo do público. Veja VALIDACAO.md, README.md e assets/ARTE.md.
